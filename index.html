@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Globe Daily - Giornale Interattivo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>Globe Daily</h1>
+        <p class="subtitle">Notizie del giorno su mappa 3D autoaggiornante</p>
+      </div>
+      <div class="status-card">
+        <div><strong>Posizione:</strong> <span id="locationLabel">Rilevamento...</span></div>
+        <div><strong>Aggiornamento:</strong> <span id="lastUpdate">-</span></div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="map-panel">
+        <canvas id="globeCanvas" aria-label="Mappa del mondo 3D"></canvas>
+        <div class="map-hint">Ruota con il mouse • Zoom con la rotella</div>
+      </section>
+
+      <aside class="news-panel">
+        <div class="panel-head">
+          <h2>Prima pagina locale</h2>
+          <button id="refreshBtn" type="button">Aggiorna ora</button>
+        </div>
+        <ul id="newsList" class="news-list"></ul>
+      </aside>
+    </main>
+
+    <template id="newsItemTemplate">
+      <li class="news-item">
+        <h3></h3>
+        <p class="meta"></p>
+        <p class="summary"></p>
+        <a target="_blank" rel="noopener noreferrer">Leggi articolo</a>
+      </li>
+    </template>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
